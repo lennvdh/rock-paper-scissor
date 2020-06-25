@@ -5,6 +5,20 @@
     display: block;
     display: none;
 }
+.scoreboard{
+    margin-left: 700px;
+    border: solid 4px black;
+    width: 150px;
+    height: 50px;
+}
+
+#userscore{
+    float: left;
+}
+#computerscore{
+    float: right;
+}
+
 
 .titel {
     text-align: center;
