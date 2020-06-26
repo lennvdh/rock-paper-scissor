@@ -22,20 +22,24 @@ function computerChoice(){
 }
 function game(userchoice){
     const computer = computerChoice();
-    if (computer === 1){
+    if (computer === userchoice){
         console.log('draw');
         whoWon.style.color = "blue";
         userScore.style.color = "blue";
         computerScore.style.color = "blue";
         whoWon.innerHTML = 'draw';
-    }else if(computer === 2){
-        console.log('you win');
-        whoWon.style.color = "green";
-        userScore.style.color = "green";
-        computerScore.style.color = "green";
-        userPoints++;
-        whoWon.innerHTML = 'You Won';
-        userScore.innerHTML = userPoints;
+        return;
+    }
+    if(computer === 2){
+        if(userchoice === 1){
+            console.log('you win');
+            whoWon.style.color = "green";
+            userScore.style.color = "green";
+            computerScore.style.color = "green";
+            userPoints++;
+            whoWon.innerHTML = 'You Won';
+            userScore.innerHTML = userPoints;
+        }
     }else{
         console.log('you lose');
         whoWon.style.color = "red"
@@ -44,7 +48,50 @@ function game(userchoice){
         computerPoints++;
         whoWon.innerHTML = 'You Lose';
         computerScore.innerHTML = computerPoints;
+        return;
     }
+    if(computer === 1){
+        if(userchoice === 0){
+            console.log('you win');
+            whoWon.style.color = "green";
+            userScore.style.color = "green";
+            computerScore.style.color = "green";
+            userPoints++;
+            whoWon.innerHTML = 'You Won';
+            userScore.innerHTML = userPoints;
+        }
+    }else{
+        console.log('you lose');
+        whoWon.style.color = "red"
+        userScore.style.color = "red";
+        computerScore.style.color = "red";
+        computerPoints++;
+        whoWon.innerHTML = 'You Lose';
+        computerScore.innerHTML = computerPoints;
+        return;
+    }
+    if(computer === 0){
+        if(userchoice === 2){
+            console.log('you win');
+            whoWon.style.color = "green";
+            userScore.style.color = "green";
+            computerScore.style.color = "green";
+            userPoints++;
+            whoWon.innerHTML = 'You Won';
+            userScore.innerHTML = userPoints;
+        }
+    }else{
+        console.log('you lose');
+        whoWon.style.color = "red"
+        userScore.style.color = "red";
+        computerScore.style.color = "red";
+        computerPoints++;
+        whoWon.innerHTML = 'You Lose';
+        computerScore.innerHTML = computerPoints;
+        return;
+    }
+
+    
 }
 function main(){
     paper.addEventListener('click', ()=>{
